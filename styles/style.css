@@ -1,0 +1,224 @@
+/* =========================================
+   CLOVER AI - FINAL UI
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+html, body, [class*="css"]{
+    font-family:Inter,sans-serif;
+}
+
+:root{
+    --bg:#08120D;
+    --bg2:#0D1A13;
+    --card:#122118;
+    --card2:#172B20;
+    --primary:#58D68D;
+    --primary2:#7DFFB3;
+    --text:#F4FFF7;
+    --muted:#AEBDB4;
+    --border:rgba(88,214,141,.18);
+}
+
+/* Background */
+
+.stApp{
+    background:
+    radial-gradient(circle at top,#163021 0%,#0D1A13 35%,#08120D 100%);
+    color:var(--text);
+}
+
+/* Main */
+
+.block-container{
+    max-width:1100px;
+    padding-top:2rem;
+    padding-bottom:2rem;
+}
+
+/* Hide */
+
+#MainMenu{
+    display:none;
+}
+
+footer{
+    display:none;
+}
+
+/* KEEP HEADER FOR SIDEBAR */
+
+header{
+    background:transparent !important;
+}
+
+/* Sidebar */
+
+section[data-testid="stSidebar"]{
+    background:#0B1711;
+    border-right:1px solid var(--border);
+}
+
+section[data-testid="stSidebar"] *{
+    color:white;
+}
+
+/* Buttons */
+
+.stButton>button{
+    width:100%;
+    border-radius:14px;
+    border:none;
+    background:linear-gradient(135deg,#58D68D,#6EF5A3);
+    color:#08120D;
+    font-weight:700;
+    transition:.25s;
+}
+
+.stButton>button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 20px rgba(88,214,141,.4);
+}
+
+/* Chat */
+
+[data-testid="stChatMessage"]{
+    padding-top:12px;
+    padding-bottom:12px;
+}
+
+[data-testid="stChatMessageContent"]{
+    background:rgba(18,33,24,.92);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:18px;
+    backdrop-filter:blur(12px);
+}
+
+/* Chat input */
+
+.stChatInput{
+    margin-top:20px;
+}
+
+.stChatInput textarea{
+    background:#122118 !important;
+    border:1px solid rgba(88,214,141,.25)!important;
+    color:white!important;
+    border-radius:18px!important;
+}
+
+.stChatInput textarea:focus{
+    border:1px solid #58D68D!important;
+    box-shadow:0 0 18px rgba(88,214,141,.25)!important;
+}
+
+/* Expanders */
+
+details{
+    background:#13241B;
+    border-radius:14px;
+    border:1px solid rgba(88,214,141,.15);
+    padding:10px;
+}
+
+summary{
+    color:#7DFFB3;
+}
+
+/* Metrics */
+
+[data-testid="metric-container"]{
+    background:#13241B;
+    border-radius:16px;
+    border:1px solid rgba(88,214,141,.15);
+}
+
+/* Success */
+
+.stSuccess{
+    border-radius:14px;
+}
+
+/* Info */
+
+.stInfo{
+    border-radius:14px;
+}
+
+/* Code */
+
+pre{
+    border-radius:14px;
+}
+
+code{
+    color:#7DFFB3;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2F6E4B;
+    border-radius:10px;
+}
+
+/* Links */
+
+a{
+    color:#7DFFB3;
+}
+
+/* Animation */
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero,
+[data-testid="stChatMessage"]{
+    animation:fade .3s ease;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.block-container{
+    padding-left:1rem;
+    padding-right:1rem;
+}
+
+}
+/* Remove the white background around the chat area */
+
+[data-testid="stChatMessage"]{
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+[data-testid="stVerticalBlock"] > div:has([data-testid="stChatMessage"]){
+    background: transparent !important;
+}
+
+/* Make only the message bubble visible */
+
+[data-testid="stChatMessageContent"]{
+    background: #122118 !important;
+    border: 1px solid rgba(88,214,141,.18) !important;
+    border-radius: 18px !important;
+    color: white !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
