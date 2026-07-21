@@ -8,7 +8,7 @@ def render_chat():
     if len(st.session_state.messages) == 0:
 
         st.markdown("""
-        ## 👋 Welcome to Clover AI
+        ## 👋 Welcome to Clover AI!
 
         Ask anything about your PDF documents.
 
