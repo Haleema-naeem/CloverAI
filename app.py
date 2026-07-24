@@ -5,7 +5,7 @@ from components.sidebar import render_sidebar
 from components.chat import render_chat
 
 st.set_page_config(
-    page_title="🍀 Clover AI",
+    page_title="Clover AI",
     page_icon="🍀",
     layout="wide",
     initial_sidebar_state="expanded"
